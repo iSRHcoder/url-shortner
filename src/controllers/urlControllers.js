@@ -18,7 +18,7 @@ export const getShortUrl = async (req, res) => {
 
 export const createShortUrl = async (req, res) => {
   try {
-    const redirectUrl = req.body.redirectUrl;
+    const redirectUrl = req.body.inputUrl;
     if (!redirectUrl) {
       return res.status(400).json({
         error: 'input Url is required',
