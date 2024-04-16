@@ -18,7 +18,7 @@ export const getShortUrl = async (req, res) => {
 
 export const createShortUrl = async (req, res) => {
   try {
-    const redirectUrl = req.body.inputUrl;
+    const redirectUrl = req.body.redirectUrl;
     if (!redirectUrl) {
       return res.status(400).json({
         error: 'input Url is required',
@@ -29,7 +29,7 @@ export const createShortUrl = async (req, res) => {
       redirectUrl: redirectUrl,
     });
 
-    res.status(201).json({
+    return res.status(201).json({
       message: 'url posted successfully',
       url: redirectUrl,
     });
