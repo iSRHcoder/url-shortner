@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import shortId from 'shortid';
+import { nanoid } from 'nanoid';
 
 const urlSchema = mongoose.Schema(
   {
@@ -10,7 +10,7 @@ const urlSchema = mongoose.Schema(
     shortId: {
       type: String,
       required: true,
-      default: shortId.generate(),
+      default: () => nanoid(),
     },
     visitHistory: [],
   },
