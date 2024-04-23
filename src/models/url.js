@@ -10,7 +10,7 @@ const urlSchema = mongoose.Schema(
     shortId: {
       type: String,
       required: true,
-      default: () => nanoid(),
+      default: () => nanoid(6),
     },
     visitHistory: [],
   },
